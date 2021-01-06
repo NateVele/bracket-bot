@@ -1,5 +1,3 @@
-const Discord = require("discord.js");
-
 module.exports = (client, message) => {
   if (message.author.bot) {
     return;
@@ -8,10 +6,7 @@ module.exports = (client, message) => {
     return;
   }
 
-  const args = message.content
-    .slice(client.config.prefix.length)
-    .trim()
-    .split(/ +/g);
+  const args = message.content.slice(client.config.prefix.length).trim().split(/ +/g);
   const command = args.shift().toLowerCase();
 
   const cmd = client.commands.get(command);
@@ -19,17 +14,6 @@ module.exports = (client, message) => {
   if (!cmd) {
     return;
   }
-
-  // try {
-  //   if (command == "generate") {
-  //     throw new Error(
-  //       "Cannot generate bracket.  Bracket already being created."
-  //     );
-  //   }
-  // } catch (err) {
-  //   console.log(err);
-  //   message.channel.send(err.message);
-  // }
 
   cmd.run(client, message, args);
 };

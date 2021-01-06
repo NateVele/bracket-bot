@@ -3,7 +3,7 @@ const Enmap = require("enmap");
 const fs = require("fs");
 const client = new Discord.Client();
 const config = require("./config.json");
-const prefix = config.prefix;
+require("dotenv").config();
 
 client.config = config;
 
