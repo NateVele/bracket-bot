@@ -228,7 +228,7 @@ exports.run = async (client, message, args) => {
           break;
         }
       }
-      finalbracketseeds[i] = players[index];
+      finalbracketseeds.push(players[index]);
     }
     channel.send("```" + "Final Seeding" + "```");
     let mystr = "";
